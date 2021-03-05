@@ -41,3 +41,23 @@ chmod +x oneline.py
 ```sh
 ./oneline.py -m /one_line/hex --code "print('HEX!')"
 ```
+
+### Obfustucation Method List
+
+<pre><b>              _ _                 </b>
+<b>  ___ ___ ___| |_|___ ___</b><font color="#FFE82C"><b> ___ _ _</b></font>
+<b> | . |   | -_| | |   | -_</b><font color="#FFE82C"><b>| . | | |</b></font><b>     </b><font color="#FFE82C"><b>Python</b></font>
+<b> |___|_|_|___|_|_|_|_|___</b><font color="#FFE82C"><b>|  _|_  |</b></font><b>     </b><font color="#729FCF"><b>Obfustucator</b></font>
+<b>                         </b><font color="#FFE82C"><b>|_| |___|</b></font>
+
+
+<b>  Obfustucators ( * = May cause Syntax Errors )</b>
+<b> -=============-</b>
+<b> 0</b>	<b>/one_line/hex</b>
+<b> 1</b>	<b>/one_line/base64</b>
+<b> 2</b>	<b>/one_line/base32</b>
+<b> 3</b>	<b>/one_line/gunzip*</b>
+<b> 4</b>	<b>/one_line/rot13*</b>
+<b> 5</b>	<b>/cmd/command</b>
+<b> 6</b>	<b>/cmd/powershell</b>
+<b> 7</b>	<b>/cmd/powershellhidden</b></pre>
