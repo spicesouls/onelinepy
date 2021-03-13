@@ -2,17 +2,16 @@ import sys, base64, codecs, binascii
 
 def getjsonlist():
     payloads = {
-        "one_line":{ 
+        "one_line":{
             "hex":"oneline_hex",
             "base64":"oneline_b64",
             "base32":"oneline_b32",
             "gunzip*":"oneline_gzip",
             "rot13*":"oneline_rot13",
             },
-        "cmd":{
-            "command":"cmd_command",
-            "powershell":"cmd_powershell",
-            "powershellhidden":"cmd_powershellhidden",
+        "powershell":{
+            "base64_pythonexec":"ps_b64_exec",
+            "base64_hidden_pythonexec":"ps_b64_hidden_exec",
             }
         }
     return payloads
@@ -26,18 +25,16 @@ def getjsonall():
     return allpayloads
 
 
-
-
-
-def cmd_command(string):
-    pbase = 'python3 -c "PLACEHOLDER"'
-    return pbase.replace('PLACEHOLDER', string)
-def cmd_powershell(string):
-    pbase = 'powershell.exe python3 -c "PLACEHOLDER"'
-    return pbase.replace('PLACEHOLDER', string)
-def cmd_powershellhidden(string):
-    pbase = 'powershell.exe -windowstyle hidden python3 -c "PLACEHOLDER"'
-    return pbase.replace('PLACEHOLDER', string)
+def ps_b64_hidden_exec(string):
+    string = f'python3 -c "{string}"'
+    pbase = 'powershell -w hidden -noni -enc PLACEHOLDER'
+    result = codecs.encode(string.encode('utf_16_le'), 'base64').decode('utf-8').replace('\n', '')
+    return pbase.replace('PLACEHOLDER', result)
+def ps_b64_exec(string):
+    string = f'python3 -c "{string}"'
+    pbase = 'powershell -enc PLACEHOLDER'
+    result = codecs.encode(string.encode('utf_16_le'), 'base64').decode('utf-8').replace('\n', '')
+    return pbase.replace('PLACEHOLDER', result)
 
 def oneline_hex(string):
     pbase = "import binascii;exec(binascii.unhexlify(bytes('PLACEHOLDER','UTF-8')).decode())"
