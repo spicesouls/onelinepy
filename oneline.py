@@ -77,7 +77,8 @@ else:
         else:
                 print('[-+-] Generating...')
                 result = eval(funcline + '(args.code)')
-        print('\n[---] RESULT :' + Fore.RED + Style.BRIGHT, result, Style.RESET_ALL)
+        if outputflag == False:
+                print('\n[---] RESULT :' + Fore.RED + Style.BRIGHT, result, Style.RESET_ALL)
     elif not args.code:
         try:
             method = encoders.getjsonall()[args.m]
@@ -91,6 +92,7 @@ else:
         with open(args.script, 'r', encoding="utf8") as o:
             code = str(o.read())
             o.close()
+#       print(code)
         print('  --> Contents Read.')
         funcline = 'encoders.' + method
         if args.m.startswith('/one_line/'):
@@ -100,8 +102,9 @@ else:
                         result = eval(funcline + '(result)')
         else:
                 print('[-+-] Generating...')
-                result = eval(funcline + '(args.code)')
-        print('\n[---] RESULT :' + Fore.RED + Style.BRIGHT, result, Style.RESET_ALL)
+                result = eval(funcline + '(code)')
+        if outputflag == False:
+                print('\n[---] RESULT :' + Fore.RED + Style.BRIGHT, result, Style.RESET_ALL)
 
 if outputflag == False:
     sys.exit()
