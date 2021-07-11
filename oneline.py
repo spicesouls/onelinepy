@@ -3,42 +3,33 @@
 ###########################
 # spicesouls.github.io <3 #
 ###########################
-
-# --> HEY! L33T HAXORZ! WE NEED YOUR HELP! <--
-#
-#   Over the past several decades, the media and popular culture has been using the term "hacker" to describe physical and information
-#   security enthusiasts who commit unlawful acts. This is unfortunate, but understandable. Given the esoteric nature of physical and
-#   information security, and the profound impact it now has on our everyday lives, it's easy to use the terms synonymously.
-#
-# www.hackingisnotacrime.org
 ###########################################
 from colorama import init, Fore, Style, Back; init()
 banner = fr'''{Style.BRIGHT}
               _ _                 
   ___ ___ ___| |_|___ ___{Fore.YELLOW} ___ _ _{Fore.RESET}
  | . |   | -_| | |   | -_{Fore.YELLOW}| . | | |{Fore.RESET}     {Fore.YELLOW}Python{Fore.RESET}
- |___|_|_|___|_|_|_|_|___{Fore.YELLOW}|  _|_  |{Fore.RESET}     {Fore.BLUE}Obfustucator{Fore.RESET}
+ |___|_|_|___|_|_|_|_|___{Fore.YELLOW}|  _|_  |{Fore.RESET}     {Fore.BLUE}Obfuscator{Fore.RESET}
                          {Fore.YELLOW}|_| |___|{Fore.RESET}
 '''
 import sys, json, base64, codecs, encoders
-
 ###########################################
 
 print(banner)
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("-m", help="Obfustucating Method (i.e, -m /one_line/base64)")
-parser.add_argument("-i", help="Iterations For Obfustucation.", default=1, type=int)
-parser.add_argument("--script", help="File path of Python file to Obfustucate.")
-parser.add_argument("--code", help="Python code to Obfustucate.")
-parser.add_argument("--list", help="List Obfustucating Methods.", action="store_true")
+parser.add_argument("-m", help="obfuscating Method (i.e, -m /one_line/base64)")
+parser.add_argument("-i", help="Iterations For obfuscation.", default=1, type=int)
+parser.add_argument("--script", help="File path of Python file to obfuscate.")
+parser.add_argument("--code", help="Python code to obfuscate.")
+parser.add_argument("--list", help="List obfuscating Methods.", action="store_true")
 parser.add_argument("--output", help="Output File.")
 
 args = parser.parse_args()
 
 if args.list:
     print('''
-  Obfustucators ( * = May cause Syntax Errors )
+  obfuscators ( * = May cause Syntax Errors )
  -=============-''')
     json = encoders.getjsonlist()
     count = 0
@@ -57,7 +48,7 @@ else:
     else:
         outputflag = True
     if not args.script and not args.code:
-        print(' Error: Please provide Code or a File Path for Obfustucation!')
+        print(' Error: Please provide Code or a File Path for obfuscation!')
     elif not args.script:
         try:
             method = encoders.getjsonall()[args.m]
@@ -65,12 +56,12 @@ else:
             try:
                 method = encoders.getjsonall()[args.m + '*']
             except KeyError:
-                print(' Error: Invalid Obfustucation Method Given!')
+                print(' Error: Invalid obfuscation Method Given!')
                 sys.exit()
-        print('  --> Code To Obfustucate:', args.code)
+        print('  --> Code To obfuscate:', args.code)
         funcline = 'encoders.' + method
         if args.m.startswith('/one_line/'):
-                print('[-+-] Starting Obfustucation, iterations:', args.i)
+                print('[-+-] Starting obfuscation, iterations:', args.i)
                 result = args.code
                 for i in range(args.i):
                         result = eval(funcline + '(result)')
@@ -86,7 +77,7 @@ else:
             try:
                 method = encoders.getjsonall()[args.m + '*']
             except KeyError:
-                print(' Error: Invalid Obfustucation Method Given!')
+                print(' Error: Invalid obfuscation Method Given!')
                 sys.exit()
         print('  --> Opening File...')
         with open(args.script, 'r', encoding="utf8") as o:
@@ -96,7 +87,7 @@ else:
         print('  --> Contents Read.')
         funcline = 'encoders.' + method
         if args.m.startswith('/one_line/'):
-                print('[-+-] Starting Obfustucation, iterations:', args.i)
+                print('[-+-] Starting obfuscation, iterations:', args.i)
                 result = code
                 for i in range(args.i):
                         result = eval(funcline + '(result)')
